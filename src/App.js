@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <h1>Weather App</h1>
       <footer>
-        This project was coded by Lydia Merrix and is{" "}
+        This project was coded by Lydia Merrix and is {" "}
         <a href="https://github.com/lydia-merrix/weather-final" target="_blank">
           open-sourced on GitHub
         </a>
