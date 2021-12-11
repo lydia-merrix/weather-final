@@ -8,27 +8,19 @@ export default function Weather() {
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
-      temperature: response.data.main.temp.wind,
-      city: response.date.name,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      iconUrl: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.main.name,
+      skies: response.data.weather[0].description,
+      sunrise: response.data.sys.sunrise,
+      sunset: response.data.sys.sunset,
     });
     setReady(true);
   }
   if (ready) {
     return (
-      //set WeatherData = {
-      //city: "New York",
-      //temperature: 19,
-      //   date: "Tuesday 12:00",
-      //   description: "partly cloudy",
-      //   imgUrl: "http://openweathermap.org/img/wn/10d@2x.png",
-      //   sunrise: 6,
-      //   sunset: 5,
-      //  wind: 0,
-      //  skies: 2,
-      //   humidity: 50,
-
-      // });
-
       <div className="container">
         <div className="Weather">
           <div className="weather-app-wrapper">
@@ -59,15 +51,17 @@ export default function Weather() {
               <h1 className="city">{weatherData.city}</h1>
               <ul>
                 <li>{weatherData.date}</li>
-                <li className="sky"></li>
+                <li className="sky">{weatherData.description}</li>
               </ul>
-              <h2>Current Temperature {weatherData.temperature}°c</h2>
+              <h2>
+                Current Temperature {Math.round(weatherData.temperature)}°c
+              </h2>
               <div className="row">
                 <div className="col-6">
                   <div className="clearfix temperature">
                     <img
-                      alt=""
-                      src="https://emojis.wiki/emoji-pics/facebook/sun-behind-small-cloud-facebook.png"
+                      alt={weatherData.description}
+                      src={weatherData.iconUrl}
                       className="weather float-left"
                     />
                     <div className="float-left">
