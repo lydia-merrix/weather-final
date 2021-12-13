@@ -4,7 +4,6 @@ import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
-
 import "./Weather.css";
 
 export default function Weatherinfo(props) {
@@ -20,9 +19,8 @@ export default function Weatherinfo(props) {
       </ul>
       <h2>Current Temperature : </h2>
       <div className="float-left">
-          <WeatherTemperature celsius={props.data.temperature} />
+        <WeatherTemperature celsius={props.data.temperature} />
       </div>
-      
 
       <div className="row">
         <div className="col-6">
