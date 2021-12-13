@@ -21,12 +21,20 @@ h1 {
 }
 
 h2 {
-  color: rgb(22, 31, 31);
+  color: rgb(1, 19, 19);
   font-size: 18px;
   font-weight: 100;
   line-height: 28px;
   margin: 0;
   padding: 0;
+}
+h3 {
+  color: rgb(1, 19, 19);
+  font-size: 64px;
+  font-weight: 200;
+  line-height: 28px;
+  margin: 20px;
+  padding: 10%;
 }
 ul {
   margin: 0;
@@ -50,7 +58,8 @@ li:first-letter {
   font-weight: 100;
   line-height: 18px;
   margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 10px
+  
 }
 .sky {
   text-transform: capitalize;
@@ -67,9 +76,9 @@ li:first-letter {
   line-height: 15px;
   margin-right: 5px;
 }
-.icon {
-  height: 5px;
-  width: 5px;
+.icon canvas {
+  height: 64px;
+  width: 64px;
 }
 fahrenheit-link {
   position: relative;
