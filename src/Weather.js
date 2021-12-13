@@ -72,5 +72,8 @@ export default function Weather(props) {
         </div>
       </div>
     );
+  } else {
+    search();
+    return null;
   }
 }
