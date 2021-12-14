@@ -76,8 +76,8 @@ li:first-letter {
   margin-right: 5px;
 }
 .icon canvas {
-  height: 64px;
-  width: 64px;
+  height: 15px;
+  width: 15px;
 }
 fahrenheit-link {
   position: relative;
