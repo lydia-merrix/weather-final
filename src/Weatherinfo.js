@@ -37,11 +37,11 @@ export default function Weatherinfo(props) {
         <div className="col-6">
           <ul>
             <li>
-              Sunrise: <span FormattedDate date={props.data.sunrise}></span>
+              Sunrise: <span> {props.data.sunrise}</span>
             </li>
             <br />
             <li>
-              Sunset: <span FormattedDate date={props.data.sunset}></span>
+              Sunset: <span> {props.data.sunset}</span>
             </li>
             <br />
             <li>
