@@ -38,7 +38,7 @@ h3 {
 }
 ul {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 li {
   color: rgb(26, 32, 32);
@@ -70,8 +70,8 @@ li:first-letter {
 }
 .temperature .today {
   color: black;
-  font-size: 75px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 200;
   line-height: 15px;
   margin-right: 5px;
 }
