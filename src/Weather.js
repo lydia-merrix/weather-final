@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./Weatherinfo";
 import WeatherForecast from "./WeatherForecast";
+import WeatherLocation from "./WeatherLocation";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -64,7 +65,7 @@ export default function Weather(props) {
                     />
                   </div>
                   <div className="col-3">
-                    <button>My Location</button>
+                    <WeatherLocation  button  />My Location
                   </div>
                 </div>
               </form>
