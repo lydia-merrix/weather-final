@@ -11,6 +11,9 @@ button {
   color: rgb(238, 239, 245);
   background-color: rgb(44, 111, 219);
 }
+.temperature {
+  font-size: 64px;
+}
 
 h1 {
   color: rgb(22, 31, 31);

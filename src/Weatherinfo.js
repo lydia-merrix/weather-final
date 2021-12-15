@@ -7,6 +7,18 @@ import WeatherTemperature from "./WeatherTemperature";
 import "./Weather.css";
 
 export default function Weatherinfo(props) {
+  function formatDate(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let hours = date.getHours();
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+    return `${hours}:${minutes}`;
+  }
   return (
     <div className="WeatherInfo">
       <h1>{props.data.city}</h1>
@@ -26,7 +38,7 @@ export default function Weatherinfo(props) {
         <div className="col-6">
           <div className="clearfix temperature">
             <div className="float-left">
-              <WeatherIcon code={props.data.icon} size={200}/>
+              <WeatherIcon code={props.data.icon} size={200} />
             </div>
             <div className="float-left">
               <strong className="today"></strong>
@@ -37,11 +49,11 @@ export default function Weatherinfo(props) {
         <div className="col-6">
           <ul>
             <li>
-              Sunrise: <span> {props.data.sunrise}</span>
+              Sunrise: <span> {formatDate(props.data.sunrise)}</span>
             </li>
             <br />
             <li>
-              Sunset: <span> {props.data.sunset}</span>
+              Sunset: <span> {formatDate(props.data.sunset)}</span>
             </li>
             <br />
             <li>
