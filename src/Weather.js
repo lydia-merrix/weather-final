@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./Weatherinfo";
 import WeatherForecast from "./WeatherForecast";
-import WeatherLocation from "./WeatherLocation";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -39,6 +38,21 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function showPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiKey = "fd9d9da952d98d244f4e2349d84a75af";
+    let units="metric";
+    let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+    let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    axios.get(`${apiUrl}`).then(handleResponse);
+  }
+
+  function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="container">
@@ -65,7 +79,12 @@ export default function Weather(props) {
                     />
                   </div>
                   <div className="col-3">
-                    <WeatherLocation  button  />My Location
+                    <span className="">
+                      <button className="gps" onClick={getCurrentPosition}>
+                        <i className="fas fa-search-location"></i>
+                        My Location
+                      </button>
+                    </span>
                   </div>
                 </div>
               </form>
